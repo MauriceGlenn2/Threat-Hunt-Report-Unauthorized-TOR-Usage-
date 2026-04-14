@@ -20,9 +20,20 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 
 
-2. On April 14, 2026 at 2:17 PM, a process was started on the computer named edr-enroll-vm. The user account labuser launched the program Tor Browser (tor-browser-windows-x86_64-portable-15.0.9.exe) from the Downloads folder located at:
+On April 14, 2026, at 2:17 PM, a process was initiated on the computer named edr-enroll-vm. The user account labuser launched Tor Browser (tor-browser-windows-x86_64-portable-15.0.9.exe) from the following directory:
 C:\Users\labuser\Downloads\
+
+An investigation of the DeviceProcessEvents table was conducted to identify any ProcessCommandLine entries containing the string "tor-browser". The results showed that at 2:17:21 PM on April 14, 2026, the user on the edr-enroll-vm device executed the file tor-browser-windows-x86_64-portable-14.0.1.exe from the Downloads folder.
 
 <img width="852" height="105" alt="image" src="https://github.com/user-attachments/assets/7652f221-63e9-4d6c-ac58-13e42769fa16" />
 
 <img width="1655" height="327" alt="image" src="https://github.com/user-attachments/assets/833860f1-93d8-4e1d-af0b-26dfbf4e999a" />
+<br><br><br>
+Searched the DeviceProcessEvents table for any indication that the user "employee" actually opened the Tor Browser. 
+There was evidence that the browser was opened at 2026-04-14T19:18:26.1922652Z.There were several additional instances of firefox.exe (Tor) as well as tor.exe as well.
+
+<img width="578" height="105" alt="image" src="https://github.com/user-attachments/assets/4121d660-f54d-4abe-9e6d-6131fb40cb52" />
+<img width="2018" height="681" alt="image" src="https://github.com/user-attachments/assets/7af3be27-4cb9-4e4d-bfcc-0386ff097444" />
+<br><br><br>
+
+3. Need
