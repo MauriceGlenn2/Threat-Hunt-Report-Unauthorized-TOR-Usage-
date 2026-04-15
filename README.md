@@ -36,4 +36,7 @@ There was evidence that the browser was opened at 2026-04-14T19:18:26.1922652Z.T
 <img width="2018" height="681" alt="image" src="https://github.com/user-attachments/assets/7af3be27-4cb9-4e4d-bfcc-0386ff097444" />
 <br><br><br>
 
-3. Need
+3. After researching TOR connection ports, on April 14, 2026 at 2:18 PM, the user account labuser on the device edr-enroll-vm successfully established a connection to the IP address 147.189.174.139 on port 9001, which is a known Tor relay port used for routing anonymous traffic through the Tor network. The connection was initiated by Tor Browser, which was manually installed by the user directly on their Desktop, indicating deliberate use of anonymization software.
+
+<img width="1042" height="696" alt="image" src="https://github.com/user-attachments/assets/42fd1beb-1d11-4d1d-aaa2-837d77be3538" />
+
