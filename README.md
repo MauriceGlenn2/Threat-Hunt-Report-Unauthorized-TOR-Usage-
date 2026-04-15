@@ -39,4 +39,32 @@ There was evidence that the browser was opened at 2026-04-14T19:18:26.1922652Z.T
 3. After researching TOR connection ports, on April 14, 2026 at 2:18 PM, the user account labuser on the device edr-enroll-vm successfully established a connection to the IP address 147.189.174.139 on port 9001, which is a known Tor relay port used for routing anonymous traffic through the Tor network. The connection was initiated by Tor Browser, which was manually installed by the user directly on their Desktop, indicating deliberate use of anonymization software.
 
 <img width="1042" height="696" alt="image" src="https://github.com/user-attachments/assets/42fd1beb-1d11-4d1d-aaa2-837d77be3538" />
+<br><br><br>
 
+# Timeline
+
+Phase 1 — Download & Installation
+2:14 PM — Tor Browser installer downloaded
+User labuser on edr-enroll-vm downloaded the Tor Browser installer to C:\Users\labuser\Downloads. Multiple Tor-related files were subsequently copied to the Desktop.
+~2:14 PM — "tor-shopping-list.txt" created on Desktop
+A file named tor-shopping-list.txt was created on the Desktop, suggesting intentional and premeditated use of the Tor network.
+
+Phase 2 — Execution
+2:17:21 PM — Tor Browser installer executed
+labuser ran tor-browser-windows-x86_64-portable-14.0.1.exe from the Downloads folder, initiating a portable installation of Tor Browser directly to the Desktop.
+2:18 PM — Tor Browser launched — firefox.exe & tor.exe running
+Tor Browser was confirmed open. Multiple instances of firefox.exe (Tor's browser shell) and tor.exe were observed running from C:\Users\labuser\Desktop\Tor Browser...
+
+Phase 3 — Network Activity
+2:18:59 PM — First successful Tor relay connection established
+tor.exe connected to the Tor relay node at 147.189.174.139 on port 9001, a known Tor relay port. This confirms the device successfully joined the Tor network and began routing anonymous traffic.
+
+# Summary
+On April 14, 2026, the user account labuser on the corporate device edr-enroll-vm deliberately downloaded, installed, and launched the Tor Browser — a tool designed to anonymize internet traffic by routing it through a series of encrypted relay nodes. The activity began at approximately 2:14 PM when the installer was downloaded and a file named tor-shopping-list.txt was created, suggesting premeditation. By 2:17 PM the installer was executed, and by 2:18 PM the browser was fully operational.
+
+Between 2:18 PM and 2:20 PM, tor.exe established outbound connections to three external IP addresses — 147.189.174.139, 82.165.144.252, and 91.179.145.24 — all over port 9001, a well-known Tor relay port. These connections were associated with three suspicious domains exhibiting characteristics of algorithmically generated domain names (DGA): ghnkvv4vwz4j5lq36k37oz.com, ox55ekf5s55bv2xyx.com, and p6m32l.com. The local Tor SOCKS proxy on port 9150 was confirmed active, meaning all browser traffic was successfully anonymized.
+
+The combination of intentional installation, a suspicious named file, DGA-like domains, and active Tor relay connections on a corporate device constitutes a clear policy violation and a potential security incident requiring immediate escalation to management and further investigation.
+
+# Response Taken
+TOR usage was confirmed on endpoint edr-enroll-vm. The device was isolated and the user's direct manager was notified.
